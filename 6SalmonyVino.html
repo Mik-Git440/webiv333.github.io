@@ -1,97 +1,37 @@
 <!DOCTYPE html>
-<html data-type="example" data-id="sequence-clockwise">
+<html lang="en">
 <head>
-    <title>Salmon y Vino Blanco</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
-    <script src="jquery.reel.js" type="text/javascript"></script>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .ColorPants {
-            color: #8000FF;
-        }
-        .Vencimiento {
-            color: #CE0067;
-        }
-        .PantsVerde {
-            color: #008080;
-        }
-        .SalmonPink {
-            color: #FF6FFF;
-        }
-        .container {
-            max-width: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        table {
-            width: 100%;
-            max-width: 288px;
-            border: 1px solid white;
-        }
-        td {
-            padding: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotating Image Sequence</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+    }
+    .rotating-image {
+        width: 500px;
+        height: 376px;
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="SalmonPink">Salmon</h1>
-        <table>
-            <tr>
-                <td>
-                    <p align="center" class="ColorPants">E</p>
-                    <p align="center" class="ColorPants"><strong>N</strong></p>
-                    <p align="center" class="ColorPants"><strong>J</strong></p>
-                    <p align="center" class="ColorPants"><strong>O</strong></p>
-                    <p align="center" class="ColorPants"><strong>Y</strong></p>
-                </td>
-                <td>
-                    <a href="6SalmonyVino.html"><img src="6SalmonyVino.JPG" name="image" width="500" height="376" class="reel" id="image"
-                         data-images="6SalmonyVino_PNG/#####.png|1..109|5"
-                         data-cw="true"
-                         data-frame="109"
-                         data-speed="-0.08"
-                         data-duration="33"
-                         data-velocity="1.0"
-                         data-brake="0.1"></a>
-</td>
-                <td>
-                    <p align="center" class="Vencimiento"><strong>Y</strong></p>
-                    <p align="center" class="Vencimiento"><strong>U</strong></p>
-                    <p align="center" class="Vencimiento"><strong>M</strong></p>
-                    <p align="center" class="Vencimiento"><strong>M</strong></p>
-                    <p align="center" class="Vencimiento"><strong>Y</strong></p>
-                    <p class="Vencimiento">&nbsp;</p>
-                </td>
-            </tr>
-        </table>
-        <pre>
-            Crusted Salmon and White Wine
-        </pre>
-    </div>
+    <img src="6SalmonyVino_PNG/00001.png" alt="Rotating Image" class="rotating-image" id="rotatingImage">
     <script>
-        const elemento = document.querySelector('[data-frame="32"]');
-        const valor = elemento.getAttribute('data-frame');
-        console.log(valor); // Imprimirá "32"
+        const image = document.getElementById('rotatingImage');
+        const totalFrames = 109;
+        let currentFrame = 1;
+
+        function updateImage() {
+            currentFrame = (currentFrame % totalFrames) + 1;
+            const frameNumber = String(currentFrame).padStart(5, '0');
+            image.src = `6SalmonyVino_PNG/${frameNumber}.png`;
+        }
+
+        setInterval(updateImage, 100); // Cambia la imagen cada 100ms (ajusta según sea necesario)
     </script>
 </body>
 </html>
