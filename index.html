@@ -14,7 +14,7 @@
         height: 100vh;
         margin: 0;
         text-align: center;
-        font-size: 1.em; /* Tamaño de letra grande */
+        font-size: 1em; /* Tamaño de letra grande */
     }
     table {
         width: 100%;
@@ -29,6 +29,15 @@
         height: auto;
         border: 4px solid white;
     }
+    .center-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fixed-size {
+        width: 200px; /* Ajusta el tamaño según tus necesidades */
+        height: 200px; /* Ajusta el tamaño según tus necesidades */
+    }
 </style>
 </head>
 <body>
@@ -37,20 +46,19 @@
     <td colspan="4"><h1 align="center"><strong> CLOTHES</strong> Click on pictures</h1></td>
   </tr>
   <tr>
-    <td width="50%"><div align="center"><a href="LicraV_Index.html"><img src="1LicraVerde.jpg" alt="Licra Verde" /></a></div></td>
+    <td width="50%"><div class="center-img"><a href="LicraV_Index.html"><img src="1LicraVerde.jpg" alt="Licra Verde" class="fixed-size" /></a></div></td>
     <td width="2%">&nbsp;</td>
     <td width="1%">&nbsp;</td>
-    <td width="47%"><div align="center"><a href="3ConjRojo.html"><img src="3ConjRojo.jpg" alt="Conjunto Rojo" /></a></div></td>
+    <td width="50%"><div class="center-img"><a href="3ConjRojo.html"><img src="3ConjRojo.jpg" alt="Conjunto Rojo" class="fixed-size" /></a></div></td>
   </tr>
   <tr>
     <td colspan="4"><h1 align="center"><strong>RESTAURANT</strong> Click on the dish</h1></td>
   </tr>
   <tr>
-    <td><div align="center"><a href="6SalmonyVino.html"><img src="6SalmonyVino.JPG" alt="Salmon y Vino" /></a></div></td>
+    <td><div class="center-img"><a href="6SalmonyVino.html"><img src="6SalmonyVino.JPG" alt="Salmon y Vino" class="fixed-size" /></a></div></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td><div align="center">
-    <div align="center"><img src="7Pastel.JPG" alt="Pastel" width="189" height="240" /></div></td>
+    <td><div class="center-img"><img src="7Pastel.JPG" alt="Pastel" class="fixed-size" /></div></td>
   </tr>
 </table>
 </body>
